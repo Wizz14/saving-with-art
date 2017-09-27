@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Add Deposit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label flaoting>ค่าอะไร ?</ion-label>
+    <ion-input type="text" style="line-height: 1.5" [(ngModel)]="depositItem.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label flaoting>เท่าไหร่ ?</ion-label>
+    <ion-input type="number" style="line-height: 1.5" [(ngModel)]="depositItem.amount"></ion-input>
+  </ion-item>
+  <div class="spacer" style="height: 1rem;"></div>
+  <button ion-button block (click)="addDeposit(depositItem)">Add</button>
+</ion-content>

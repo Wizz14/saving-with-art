@@ -24,3 +24,7 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
+ionic cordova build browser
+firebase login
+firebase init
+firebase deploy

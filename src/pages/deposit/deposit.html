@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar  color="primary">
+    <ion-title>Deposit</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navigateToAddDeposit()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-spinner style="position: absolute;top: 50%;left: 50%;" *ngIf="isLoading" icon="ripple" class="spinner-energized"></ion-spinner>
+  <ion-list *ngIf="!isLoading">
+    <ion-item *ngFor="let item of (depositItems)?.slice().reverse()" (click)="showActionSheet(item)">
+      <h2 style="margin-top:0px;">{{item.name}}</h2>
+      <h3>{{item.amount}} บาท</h3>
+      <p>{{item.depositDate | date : 'dd/MM/yyyy HH:mm:ss'}}</p>
+      <ion-note item-end>
+        <ion-icon name="logo-usd" style="color:mediumseagreen;font-size:30px;" *ngIf="item.isBank"></ion-icon>
+        <ion-icon name="checkmark-circle" style="color:mediumseagreen;font-size:30px;" *ngIf="item.isApproved"></ion-icon>
+        <ion-icon name="close-circle" style="color:red;font-size:30px;" *ngIf="item.isReject"></ion-icon>
+      </ion-note>
+    </ion-item>
+
+
+  </ion-list>
+
+  <ion-list no-lines *ngIf="!isAuthen">
+    <ion-item>
+      <h2>No permission</h2>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

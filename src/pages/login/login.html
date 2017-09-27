@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div *ngIf="isLoadingDone">
+    <h1>Saving with Art</h1>
+    <div class="spacer" style="height: 1rem;"></div>
+    <img src="assets/img/money.gif" style="width:100%">
+    <div class="spacer" style="height: 4rem;"></div>
+    <div align="center">
+      <button ion-button (click)="loginWithFacebook()" style="background-color:#4267b2;">
+      <ion-icon name="logo-facebook" style="font-size:36px;"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Continue With Facebook
+  </button>
+    </div>
+  </div>
+</ion-content>
+<!--<ion-content padding *ngIf="!isLoadingDone">
+  <h1>Saving with Art</h1>
+  <div class="spacer" style="height: 1rem;"></div>
+  <img src="assets/img/money.gif" style="width:100%">
+  <div class="spacer" style="height: 4rem;"></div>
+  <div align="center">
+    <button ion-button (click)="loginWithFacebook()" style="background-color:#4267b2;">
+      <ion-icon name="logo-facebook" style="font-size:36px;"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Continue With Facebook
+  </button>
+  </div>
+</ion-content>-->

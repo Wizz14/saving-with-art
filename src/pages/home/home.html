@@ -1,17 +1,46 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <ion-img width="80" height="80" src="{{user?.photoURL}}"></ion-img>
+      </ion-col>
+      <ion-col col-4>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h2 style="margin-bottom:0px;">{{user?.displayName}}</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <h5 style="margin-bottom:0px;">Welcome to Saving with Art</h5>
+        <p>• เข้า Tab Deposit กดปุ่ม "+" ที่มุมขวาบนเพื่อเพิ่มรายการ</p>
+        <p>• ระบุค่าใช้จ่าย และยอดเงิน แล้วกดปุ่ม Add</p>
+        <p>• รอการอนุมัติ และโอนเงินเข้าธนาคาร</p>
+        <p>• รายการที่ผ่านการอนุมัติ จะมีสัญลักษณ์
+          <ion-icon name="checkmark-circle" style="color:mediumseagreen;"></ion-icon>
+        </p>
+        <p>• รายการที่<b>ไม่ผ่านการ</b>อนุมัติ จะมีสัญลักษณ์ 
+          <ion-icon name="close-circle" style="color:red;"> </ion-icon> ให้ทำการแก้ไขรายการอีกครั้ง
+        </p>
+
+        <p>• รายการที่โอนเงินเข้าธนาคารแล้ว จะมีสัญลักษณ์
+          <ion-icon name="logo-usd" style="color:mediumseagreen;"></ion-icon>
+        </p>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button (click)="signOut()">Log out</button>
+
 </ion-content>

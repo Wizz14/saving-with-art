@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>summary</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-spinner style="position: absolute;top: 50%;left: 50%;" *ngIf="isLoading" icon="ripple" class="spinner-energized"></ion-spinner>
+
+  <div *ngIf="!isLoading">
+
+    <ion-card>
+      <ion-card-header>
+        เข้าธนาคารแล้ว
+      </ion-card-header>
+      <ion-card-content>
+        <p> {{countBank(depositList)}} รายการ</p>
+        <p> {{summaryBank(depositList)}} บาท</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        รอเข้าธนาคาร
+      </ion-card-header>
+      <ion-card-content>
+        <p> {{countApproved(depositList)}} รายการ</p>
+        <p> ยอดเงิน {{summaryApproved(depositList)}} บาท</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        รอทำรายการ
+      </ion-card-header>
+      <ion-card-content>
+        <p> รอทำรายการ {{countWaiting(depositList)}} รายการ</p>
+        <p> ยอดเงิน {{summaryWaiting(depositList)}} บาท</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>
