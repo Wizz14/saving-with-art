@@ -1,4 +1,6 @@
-### This is ionic + firebase project 
+# Saving with Art
+
+Ionic3 + firebase project for expense memo
 
 Demo : [https://savingwithart.firebaseapp.com/](https://savingwithart.firebaseapp.com)
 
