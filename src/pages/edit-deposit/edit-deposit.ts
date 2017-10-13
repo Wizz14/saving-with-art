@@ -31,6 +31,7 @@ export class EditDepositPage {
       return;
     }
     depositItem.isReject = false;
+    depositItem.amount = Number(depositItem.amount);
     this.depositItemRef$.update(depositItem);
     this.navCtrl.pop();
   }
